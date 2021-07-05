@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background-color: #236063;
+  color:white;
+  font-size: 20px;
+
+}
+.header{
+  text-align: center;
+  margin:0px;
+}
+.header img{
+  padding-top:10px;
+  width:250px;
+  height:250px;
+}
+.header h2{
+  padding-top:10px;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+font-family: 'Prata', serif;
+
+}
+
+.jumbotron{
+  background-image: linear-gradient(to right, red , yellow);
+}
+input.invalid{
+  border-color:red;
+}
+td{
+  color:white;
+}

@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-bakery-form></app-bakery-form>
+  </div>
+  <div class="col-md-7">
+
+    <div class="input-group">
+      <input type="search" name="bakeryName" [(ngModel)]="bakeryName" class="form-control rounded col-md-10" placeholder="Name of cake" aria-label="Search"
+        aria-describedby="search-addon" style="margin-bottom: 20px;"/>
+    </div>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>ID</th>
+          <th>Name of cake</th>
+          <th>Price</th>
+          <th>Manu Date</th>
+          <th>Expire Day</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="tbody-dark">
+        <tr *ngFor="let pd of service.lists | serviceFilter:bakeryName" >
+          <td (click)="populateForm(pd)" >{{pd.bakeryID}}</td>
+          <td (click)="populateForm(pd)" >{{pd.bakeryName}}</td>
+          <td (click)="populateForm(pd)">{{pd.bakeryPrice}}</td>
+          <td (click)="populateForm(pd)">{{pd.bakeryDay}}</td>
+          <td (click)="populateForm(pd)">{{pd.bakeryExpire}}</td>
+          <td (click)="populateForm(pd)">{{pd.bakeryStatus}}</td>
+          <td>
+              <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.bakeryID)" ></i>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+</div>

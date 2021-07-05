@@ -1,0 +1,44 @@
+
+<form autocomplete="off" novalidate #form="ngForm" (submit)="onSubmit(form)">
+
+  <input type="hidden" name="bakeryID" [value]="service.formData.bakeryID" />
+  <div class="form-group">
+    <label>CARD OWNER BAKERY</label>
+
+   <input class="form-control form-control-lg" placeholder="Bakery Name"
+    name="BakeryName" #BakeryName= "ngModel" [(ngModel)] = "service.formData.bakeryName" required [class.invalid]="BakeryName.invalid && BakeryName.touched">
+
+  </div>
+  <div class="form-group">
+    <label>PRICE</label>
+
+   <input class="form-control form-control-lg" placeholder="Price of its"
+    name="BakeryPrice" #BakeryPrice= "ngModel" [(ngModel)] = "service.formData.bakeryPrice" required [class.invalid]="BakeryPrice.invalid && BakeryPrice.touched" >
+
+  </div>
+  <div class="form-group">
+    <label>MANUFACTURING DATE</label>
+
+   <input class="form-control form-control-lg" placeholder="DD/MM "
+    name="BakeryDay" #BakeryDay= "ngModel" [(ngModel)] = "service.formData.bakeryDay" required [class.invalid]="BakeryDay.invalid && BakeryDay.touched">
+
+  </div>
+  <div class="form-row" >
+  <div class="form-group col-md-6" >
+    <label>EXPIRY DATE</label>
+   <input class="form-control form-control-lg" placeholder="using day"
+    name="BakeryExpire" #BakeryExpire= "ngModel" [(ngModel)] = "service.formData.bakeryExpire" required [class.invalid]="BakeryExpire.invalid && BakeryExpire.touched">
+
+  </div>
+  <div class="form-group col-md-6">
+    <label>BAKERY STATUS</label>
+   <input class="form-control form-control-lg" placeholder="numbers of cake"
+    name="BakeryStatus" #BakeryStatus= "ngModel" [(ngModel)] = "service.formData.bakeryStatus" required [class.invalid]="BakeryStatus.invalid && BakeryStatus.touched">
+
+  </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-danger btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+  </div>
+  </form>
+
